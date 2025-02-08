@@ -165,9 +165,19 @@ eleventyNavigation:
             <!-- Left Image Section -->
             <div class="cs-left">
                 <picture class="cs-picture cs-picture1">
-                    <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="cabinets" loading="lazy" width="400" height="563">
+                <!--Mobile Image -->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets2.jpg" | resize({width: 482, height: 537}) | avif %}" type="image/avif">
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets2.jpg" | resize({width: 482, height: 537}) | webp %}" type="image/webp">
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets2.jpg" | resize({width: 482, height: 537}) | jpeg %}" type="image/jpeg">
+                <!--Tablet Image -->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets2.jpg" | resize({width: 731, height: 814}) | avif %}" type="image/avif">
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets2.jpg" | resize({width: 731, height: 814}) | webp %}" type="image/webp">
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets2.jpg" | resize({width: 731, height: 814}) | jpeg %}" type="image/jpeg">
+                <!--Desktop Image -->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets2.jpg" | resize({width: 1044, height: 1162}) | avif %}" type="image/avif">
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets2.jpg" | resize({width: 1044, height: 1162}) | webp %}" type="image/webp">
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets2.jpg" | resize({width: 1044, height: 1162}) | jpeg %}" type="image/jpeg">
+                <img src="{% getUrl "/assets/images/cabinets2.jpg" | resize({width: 1044, height: 1162}) | jpeg %}" alt="kitchen cabinets" width="522" height="581" loading="lazy" decoding="async" aria-hidden="true">
                 </picture>
                 <picture class="cs-picture cs-picture2">
                     <source media="(max-width: 600px)" srcset="/assets/images/construction-m.jpg">
